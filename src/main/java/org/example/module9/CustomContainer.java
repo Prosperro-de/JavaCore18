@@ -1,5 +1,7 @@
 package org.example.module9;
 
+import java.util.Arrays;
+
 public class CustomContainer<T> {
     private T[] data = (T[]) new Object[10];
     private int size;
@@ -13,7 +15,7 @@ public class CustomContainer<T> {
     }
 
     public T get(int index) {
-        //check if index valid throw ndexOutOfBoundsException
+        //check if index valid throw IndexOutOfBoundsException
         return data[index];
     }
 
