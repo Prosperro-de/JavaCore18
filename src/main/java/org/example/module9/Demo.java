@@ -99,6 +99,14 @@ public class Demo {
 
         List<String> list1 = new ArrayList<>();
         HashSet<String> strings = new HashSet<>(list1);
+// PECS
+//        Number number = 5;
+//        Integer integer = 10;
+//        integer = (Integer) number;
+//        number = integer;
+//        List<Number> numberList = List.of(1, 3, 4);
+//        List<Integer> integerList = List.of(1, 3, 4);
+
     }
 
 
