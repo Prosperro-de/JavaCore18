@@ -5,11 +5,13 @@ import lombok.SneakyThrows;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Demo {
 
     static final Object monitor = new Object();
-    public static int counter;
+//    public static int counter;
+    public static AtomicInteger counter = new AtomicInteger();
 
 
     public static void main(String[] args) throws InterruptedException {
@@ -39,7 +41,8 @@ public class Demo {
         for (int i = 0; i < 10000; i++) {
             Thread thread = new Thread(() -> {
                 for (int j = 0; j < 10000; j++) {
-                    increment();
+//                    increment();
+                    counter.getAndAdd(1);
                 }
             });
             threads.add(thread);
@@ -57,7 +60,7 @@ public class Demo {
 
     private static void increment() {
         synchronized (monitor) {
-            counter++;
+//            counter++;
         }
     }
 
